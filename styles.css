@@ -286,6 +286,14 @@ body {
   font-weight: 500;
   font-size: 18px;
   letter-spacing: 0.08em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.wire-nav .brand img {
+  height: 32px;
+  width: auto;
+  object-fit: contain;
 }
 .wire-nav ul {
   display: flex;
