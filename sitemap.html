@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>小野田ガラス — サイト構成</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Hiragino Kaku Gothic Pro', 'Noto Sans JP', sans-serif; background: #f8f6f2; color: #2a2a2a; padding: 48px 40px; }
+h1 { font-size: 11px; letter-spacing: 0.14em; color: #999; font-weight: 400; margin-bottom: 8px; }
+h1 span { font-size: 22px; color: #1a1a1a; font-weight: 700; display: block; margin-top: 4px; letter-spacing: 0.02em; }
+.subtitle { font-size: 11px; color: #aaa; margin-bottom: 40px; }
+
+.tree { display: flex; align-items: stretch; }
+
+/* HOME */
+.home {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  background: #1a1a1a; color: #fff;
+  width: 100px; padding: 16px 10px;
+  font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-align: center;
+  flex-shrink: 0; align-self: center;
+}
+.home small { font-size: 10px; color: #888; font-weight: 400; margin-top: 4px; display: block; }
+
+/* H connector */
+.h-line { width: 32px; border-top: 2px solid #bbb; align-self: center; flex-shrink: 0; }
+
+/* Spine + rows */
+.spine-wrap { display: flex; align-items: stretch; }
+.spine { width: 2px; background: #bbb; flex-shrink: 0; }
+.rows { display: flex; flex-direction: column; }
+
+/* Each page row */
+.row { display: flex; align-items: center; }
+.row-tick { width: 24px; border-top: 2px solid #bbb; flex-shrink: 0; }
+
+.node {
+  width: 168px; padding: 9px 14px; border: 1.5px solid #c8c4bc;
+  background: #fff; font-size: 12px; font-weight: 700;
+  flex-shrink: 0; align-self: stretch; display: flex; flex-direction: column; justify-content: center;
+}
+.node small { font-size: 10px; color: #999; font-weight: 400; margin-top: 2px; }
+
+/* sub connector */
+.sub-line { width: 20px; border-top: 2px solid #ddd; flex-shrink: 0; }
+
+/* sub spine + items */
+.sub-wrap { display: flex; align-items: stretch; }
+.sub-spine { width: 2px; background: #ddd; flex-shrink: 0; }
+.sub-rows { display: flex; flex-direction: column; }
+.sub-row { display: flex; align-items: center; }
+.sub-tick { width: 14px; border-top: 2px solid #ddd; flex-shrink: 0; }
+.sub-node {
+  padding: 6px 12px; border: 1px solid #e0ddd8;
+  background: #faf9f7; font-size: 11px; color: #555;
+  white-space: nowrap; align-self: stretch; display: flex; align-items: center;
+}
+
+/* L3 */
+.l3-line { width: 16px; border-top: 1px dashed #ddd; flex-shrink: 0; }
+.l3-wrap { display: flex; align-items: stretch; }
+.l3-spine { width: 1px; background: #ddd; flex-shrink: 0; }
+.l3-rows { display: flex; flex-direction: column; }
+.l3-row { display: flex; align-items: center; }
+.l3-tick { width: 10px; border-top: 1px dashed #ddd; flex-shrink: 0; }
+.l3-node {
+  padding: 4px 10px; border: 1px dashed #e8e5e0;
+  background: #f5f4f1; font-size: 10px; color: #777;
+  white-space: nowrap; align-self: stretch; display: flex; align-items: center;
+}
+
+/* spacing between rows */
+.gap { height: 6px; }
+</style>
+</head>
+<body>
+
+<h1>SITE MAP <span>小野田ガラス</span></h1>
+<p class="subtitle">ECサイト / サイトマップ構成図</p>
+
+<div class="tree">
+  <div class="home">小野田<br>ガラス<small>HOME</small></div>
+  <div class="h-line"></div>
+
+  <div class="spine-wrap">
+    <div class="spine"></div>
+    <div class="rows">
+
+      <!-- 02 -->
+      <div class="gap"></div>
+      <div class="row">
+        <div class="row-tick"></div>
+        <div class="node">02 私たちについて<small>About</small></div>
+        <div class="sub-line"></div>
+        <div class="sub-wrap">
+          <div class="sub-spine"></div>
+          <div class="sub-rows">
+            <div class="sub-row"><div class="sub-tick"></div><div class="sub-node">理念（MVV）</div></div>
+            <div class="sub-row"><div class="sub-tick"></div><div class="sub-node">沿革</div></div>
+            <div class="sub-row"><div class="sub-tick"></div><div class="sub-node">所在地・アクセス</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 03 -->
+      <div class="gap"></div>
+      <div class="row">
+        <div class="row-tick"></div>
+        <div class="node">03 この土地とガラス<small>Land &amp; Glass</small></div>
+        <div class="sub-line"></div>
+        <div class="sub-wrap">
+          <div class="sub-spine"></div>
+          <div class="sub-rows">
+            <div class="sub-row"><div class="sub-tick"></div><div class="sub-node">工房の周辺スポット</div></div>
+            <div class="sub-row"><div class="sub-tick"></div><div class="sub-node">山陽小野田市・歴史</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 04 -->
+      <div class="gap"></div>
+      <div class="row">
+        <div class="row-tick"></div>
+        <div class="node">04 ギャラリー<small>Gallery</small></div>
+        <div class="sub-line"></div>
+        <div class="sub-wrap">
+          <div class="sub-spine"></div>
+          <div class="sub-rows">
+            <div class="sub-row"><div class="sub-tick"></div><div class="sub-node">焼野工房の作品</div></div>
+            <div class="sub-row"><div class="sub-tick"></div><div class="sub-node">野田先生の作品</div></div>
+            <div class="sub-row"><div class="sub-tick"></div><div class="sub-node">セレクト作品</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 05 -->
+      <div class="gap"></div>
+      <div class="row">
+        <div class="row-tick"></div>
+        <div class="node">05 作家一覧<small>Artists</small></div>
+        <div class="sub-line"></div>
+        <div class="sub-wrap">
+          <div class="sub-spine"></div>
+          <div class="sub-rows">
+            <div class="sub-row"><div class="sub-tick"></div><div class="sub-node">野田 雄一</div></div>
+            <div class="sub-row"><div class="sub-tick"></div><div class="sub-node">徳永</div></div>
+            <div class="sub-row"><div class="sub-tick"></div><div class="sub-node">相星</div></div>
+            <div class="sub-row"><div class="sub-tick"></div><div class="sub-node">中尾</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 06 -->
+      <div class="gap"></div>
+      <div class="row">
+        <div class="row-tick"></div>
+        <div class="node">06 オンラインショップ<small>Shop</small></div>
+        <div class="sub-line"></div>
+        <div class="sub-wrap">
+          <div class="sub-spine"></div>
+          <div class="sub-rows">
+            <div class="sub-row"><div class="sub-tick"></div><div class="sub-node">酒器</div></div>
+            <div class="sub-row"><div class="sub-tick"></div><div class="sub-node">テーブルウェア</div></div>
+            <div class="sub-row"><div class="sub-tick"></div><div class="sub-node">フラワーベース</div></div>
+            <div class="sub-row"><div class="sub-tick"></div><div class="sub-node">インテリア・オブジェ</div></div>
+            <div class="sub-row"><div class="sub-tick"></div><div class="sub-node">アクセサリー</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 07 -->
+      <div class="gap"></div>
+      <div class="row">
+        <div class="row-tick"></div>
+        <div class="node">07 取り組み<small>Initiatives</small></div>
+        <div class="sub-line"></div>
+        <div class="sub-wrap">
+          <div class="sub-spine"></div>
+          <div class="sub-rows">
+            <div class="sub-row">
+              <div class="sub-tick"></div><div class="sub-node">現代ガラス展</div>
+              <div class="l3-line"></div>
+              <div class="l3-wrap">
+                <div class="l3-spine"></div>
+                <div class="l3-rows">
+                  <div class="l3-row"><div class="l3-tick"></div><div class="l3-node">概要・紹介文</div></div>
+                  <div class="l3-row"><div class="l3-tick"></div><div class="l3-node">開催実績タイムライン</div></div>
+                  <div class="l3-row"><div class="l3-tick"></div><div class="l3-node">展示風景・出展作品</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 08 -->
+      <div class="gap"></div>
+      <div class="row">
+        <div class="row-tick"></div>
+        <div class="node">08 関連施設<small>Facilities</small></div>
+        <div class="sub-line"></div>
+        <div class="sub-wrap">
+          <div class="sub-spine"></div>
+          <div class="sub-rows">
+            <div class="sub-row">
+              <div class="sub-tick"></div><div class="sub-node">焼野海岸ガラス工房</div>
+              <div class="l3-line"></div>
+              <div class="l3-wrap">
+                <div class="l3-spine"></div>
+                <div class="l3-rows">
+                  <div class="l3-row"><div class="l3-tick"></div><div class="l3-node">店長挨拶</div></div>
+                  <div class="l3-row"><div class="l3-tick"></div><div class="l3-node">工房設備</div></div>
+                  <div class="l3-row"><div class="l3-tick"></div><div class="l3-node">制作内容</div></div>
+                  <div class="l3-row"><div class="l3-tick"></div><div class="l3-node">訪問のご案内</div></div>
+                </div>
+              </div>
+            </div>
+            <div class="sub-row">
+              <div class="sub-tick"></div><div class="sub-node">きららガラス未来館</div>
+              <div class="l3-line"></div>
+              <div class="l3-wrap">
+                <div class="l3-spine"></div>
+                <div class="l3-rows">
+                  <div class="l3-row"><div class="l3-tick"></div><div class="l3-node">施設概要</div></div>
+                  <div class="l3-row"><div class="l3-tick"></div><div class="l3-node">小野田ガラスとのかかわり</div></div>
+                  <div class="l3-row"><div class="l3-tick"></div><div class="l3-node">基本情報</div></div>
+                </div>
+              </div>
+            </div>
+            <div class="sub-row">
+              <div class="sub-tick"></div><div class="sub-node">レジデンス</div>
+              <div class="l3-line"></div>
+              <div class="l3-wrap">
+                <div class="l3-spine"></div>
+                <div class="l3-rows">
+                  <div class="l3-row"><div class="l3-tick"></div><div class="l3-node">施設概要</div></div>
+                  <div class="l3-row"><div class="l3-tick"></div><div class="l3-node">小野田ガラスとのかかわり</div></div>
+                  <div class="l3-row"><div class="l3-tick"></div><div class="l3-node">基本情報</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 09 -->
+      <div class="gap"></div>
+      <div class="row">
+        <div class="row-tick"></div>
+        <div class="node">09 相互リンク<small>Partners</small></div>
+        <div class="sub-line"></div>
+        <div class="sub-wrap">
+          <div class="sub-spine"></div>
+          <div class="sub-rows">
+            <div class="sub-row">
+              <div class="sub-tick"></div><div class="sub-node">CLASSGLASS ECサイト</div>
+              <div class="l3-line"></div>
+              <div class="l3-wrap">
+                <div class="l3-spine"></div>
+                <div class="l3-rows">
+                  <div class="l3-row"><div class="l3-tick"></div><div class="l3-node">サイト紹介文</div></div>
+                  <div class="l3-row"><div class="l3-tick"></div><div class="l3-node">外部サイトへ ↗</div></div>
+                </div>
+              </div>
+            </div>
+            <div class="sub-row">
+              <div class="sub-tick"></div><div class="sub-node">ふるさと納税</div>
+              <div class="l3-line"></div>
+              <div class="l3-wrap">
+                <div class="l3-spine"></div>
+                <div class="l3-rows">
+                  <div class="l3-row"><div class="l3-tick"></div><div class="l3-node">サイト紹介文</div></div>
+                  <div class="l3-row"><div class="l3-tick"></div><div class="l3-node">外部サイトへ ↗</div></div>
+                </div>
+              </div>
+            </div>
+            <div class="sub-row">
+              <div class="sub-tick"></div><div class="sub-node">他</div>
+              <div class="l3-line"></div>
+              <div class="l3-wrap">
+                <div class="l3-spine"></div>
+                <div class="l3-rows">
+                  <div class="l3-row"><div class="l3-tick"></div><div class="l3-node">サイト紹介文</div></div>
+                  <div class="l3-row"><div class="l3-tick"></div><div class="l3-node">外部サイトへ ↗</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 10 -->
+      <div class="gap"></div>
+      <div class="row">
+        <div class="row-tick"></div>
+        <div class="node">10 お知らせ<small>News</small></div>
+      </div>
+
+      <!-- 11 -->
+      <div class="gap"></div>
+      <div class="row">
+        <div class="row-tick"></div>
+        <div class="node">11 お問い合わせ<small>Contact</small></div>
+      </div>
+      <div class="gap"></div>
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
