@@ -215,6 +215,9 @@ body {
     var(--paper-2);
 }
 .ph--circle { border-radius: 50%; aspect-ratio: 1; }
+.ph.has-img { background-image: var(--ph-img); background-size: cover; background-position: center; border-style: solid; border-color: rgba(0,0,0,0.08); overflow: hidden; }
+.ph.has-img .lbl { display: none; }
+.ph.has-img::before, .ph.has-img::after { display: none; }
 .ph .lbl {
   background: var(--paper);
   padding: 3px 8px;
