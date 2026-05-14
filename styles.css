@@ -1,0 +1,523 @@
+/* ============================================================
+   Onoda Glass EC — Wireframes
+   Sketchy / low-fi aesthetic
+   ============================================================ */
+
+:root {
+  --paper: #ffffff;
+  --paper-2: #f4f3f0;
+  --ink: #15140f;
+  --ink-2: #4a4641;
+  --ink-3: #8a857c;
+  --rule: #1a1814;
+  --accent: oklch(0.62 0.13 30);   /* warm terracotta */
+  --accent-2: oklch(0.7 0.08 220); /* glass blue */
+  --grid: rgba(20, 18, 14, 0.06);
+  --stripe: rgba(20, 18, 14, 0.05);
+  /* Japanese heading: Mincho-style refined serif. Pairs with Noto Sans JP for body. */
+  --jp-head: 'Shippori Mincho B1', 'Yu Mincho', 'YuMincho', 'Hiragino Mincho ProN', serif;
+  --jp-body: 'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', sans-serif;
+  --hand: var(--jp-head);
+  --hand-en: 'Cormorant Garamond', 'Shippori Mincho B1', serif;
+  --mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--jp-body);
+  font-size: 14px;
+  line-height: 1.6;
+  font-feature-settings: "palt";
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  min-height: 100vh;
+}
+
+/* === Top bar / tab nav ====================================== */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--paper);
+  border-bottom: 1px solid var(--rule);
+  padding: 14px 28px 10px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 18px;
+}
+
+.topbar__title {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-right: auto;
+}
+.topbar__title .h {
+  font-family: var(--hand-en);
+  font-weight: 500;
+  font-size: 26px;
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+.topbar__title .sub {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--ink-3);
+  letter-spacing: 0.04em;
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 4px;
+}
+.tab {
+  appearance: none;
+  background: transparent;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-family: var(--jp-body);
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--ink);
+  cursor: pointer;
+  transition: transform 0.08s ease, background 0.12s ease;
+}
+.tab:hover { transform: translateY(-1px); background: rgba(0,0,0,0.04); }
+.tab[aria-selected="true"] {
+  background: var(--ink);
+  color: var(--paper);
+}
+.tab .num {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--ink-3);
+  margin-right: 6px;
+}
+.tab[aria-selected="true"] .num { color: rgba(255,255,255,0.7); }
+
+/* === Page container ========================================= */
+.page { display: none; padding: 32px 28px 80px; }
+.page[data-active="true"] { display: block; }
+
+.page-header {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 6px;
+  flex-wrap: wrap;
+}
+.page-header h1 {
+  font-family: var(--jp-head);
+  font-weight: 500;
+  font-size: 28px;
+  margin: 0;
+  letter-spacing: 0.04em;
+}
+.page-header .crumb {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--ink-3);
+}
+.page-header .desc {
+  margin-top: 4px;
+  flex-basis: 100%;
+  font-size: 13px;
+  color: var(--ink-2);
+  max-width: 70ch;
+}
+
+/* === Variation grid (Top page) ============================== */
+.variations {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: 28px;
+}
+@media (max-width: 1280px) {
+  .variations { grid-template-columns: 1fr; }
+}
+
+.variation {
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  position: relative;
+  padding: 0;
+  overflow: hidden;
+}
+.variation__tag {
+  position: absolute;
+  top: -1.5px;
+  left: -1.5px;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 4px 12px 5px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  z-index: 2;
+}
+.variation__title {
+  padding: 14px 18px 8px 70px;
+  font-family: var(--jp-head);
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: 0.04em;
+  border-bottom: 1px dashed var(--rule);
+}
+.variation__title em {
+  font-family: var(--hand-en);
+  font-style: italic;
+  font-weight: 500;
+  color: var(--accent);
+  margin-right: 6px;
+}
+.variation__body { padding: 0; }
+
+/* === Wire elements ========================================== */
+/* image placeholder */
+.ph {
+  background:
+    repeating-linear-gradient(135deg, transparent 0 8px, var(--stripe) 8px 9px);
+  border: 1.5px dashed var(--rule);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink-2);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  text-align: center;
+  padding: 8px;
+  min-height: 80px;
+}
+.ph::before, .ph::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border: 1.5px dashed var(--rule);
+  opacity: 0;
+}
+.ph--solid {
+  background:
+    repeating-linear-gradient(135deg, transparent 0 8px, var(--stripe) 8px 9px),
+    var(--paper-2);
+}
+.ph--circle { border-radius: 50%; aspect-ratio: 1; }
+.ph .lbl {
+  background: var(--paper);
+  padding: 3px 8px;
+  border: 1px solid var(--rule);
+  white-space: pre-line;
+}
+
+/* text line placeholders */
+.line {
+  height: 8px;
+  background: var(--ink);
+  border-radius: 999px;
+  margin: 6px 0;
+  opacity: 0.85;
+}
+.line.thin { height: 4px; opacity: 0.6; }
+.line.short { width: 40%; }
+.line.med { width: 65%; }
+.line.long { width: 88%; }
+.lines > * + * { margin-top: 4px; }
+
+/* annotation arrow callouts */
+.note {
+  font-family: var(--hand-en);
+  font-size: 14px;
+  color: var(--accent);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.note::before { content: "↳"; }
+
+/* sticky right-rail annotations */
+.annot {
+  position: absolute;
+  font-family: var(--hand-en);
+  font-size: 13px;
+  color: var(--accent);
+  line-height: 1.2;
+  pointer-events: none;
+  max-width: 140px;
+}
+.annot::before {
+  content: "";
+  display: inline-block;
+  width: 18px;
+  height: 1.5px;
+  background: var(--accent);
+  vertical-align: middle;
+  margin-right: 4px;
+}
+
+/* === Wire layout primitives ================================= */
+.wire-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 18px;
+  border-bottom: 1px dashed var(--rule);
+  font-family: var(--hand-en);
+  font-size: 14px;
+  background: rgba(255,255,255,0.4);
+}
+.wire-nav .brand {
+  font-family: var(--jp-head);
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: 0.08em;
+}
+.wire-nav ul {
+  display: flex;
+  gap: 14px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  color: var(--ink-2);
+}
+
+.wire-hero {
+  position: relative;
+  padding: 0;
+  border-bottom: 1.5px solid var(--rule);
+}
+.wire-hero .ph { min-height: 220px; border-left: none; border-right: none; border-top: none; }
+.wire-hero .overlay {
+  position: absolute;
+  left: 22px;
+  bottom: 18px;
+  color: var(--ink);
+  background: rgba(243,238,226,0.85);
+  padding: 8px 12px;
+  border: 1px solid var(--rule);
+  font-family: var(--hand);
+  font-size: 13px;
+}
+.wire-hero .overlay .en {
+  display: block;
+  font-family: var(--hand-en);
+  font-size: 11px;
+  color: var(--ink-3);
+}
+
+.wire-section {
+  padding: 22px 18px;
+  border-bottom: 1px dashed var(--rule);
+  position: relative;
+}
+.wire-section h3 {
+  font-family: var(--hand-en);
+  font-weight: 500;
+  font-size: 18px;
+  margin: 0 0 8px;
+  color: var(--ink);
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 6px;
+  letter-spacing: 0.02em;
+}
+.wire-section h3 .jp {
+  font-family: var(--jp-head);
+  font-size: 12px;
+  color: var(--ink-3);
+  margin-left: 10px;
+  letter-spacing: 0.05em;
+}
+
+.wire-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.wire-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.wire-grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+
+.wire-card {
+  border: 1px solid var(--rule);
+  padding: 8px;
+  background: var(--paper);
+}
+.wire-card .ph { min-height: 90px; margin-bottom: 6px; }
+.wire-card .meta {
+  font-family: var(--mono);
+  font-size: 9px;
+  color: var(--ink-3);
+  letter-spacing: 0.03em;
+}
+.wire-card .ttl {
+  font-family: var(--hand);
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+.see-more {
+  font-family: var(--hand-en);
+  font-size: 13px;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  padding: 6px 0;
+  margin: 14px auto 0;
+  width: 60%;
+  text-align: center;
+  color: var(--ink-2);
+}
+
+.wire-footer {
+  padding: 14px 18px;
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--ink-3);
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px dashed var(--rule);
+}
+
+/* === News list =============================================== */
+.news-row {
+  display: grid;
+  grid-template-columns: 90px 1fr auto;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 0;
+  border-bottom: 1px dashed var(--rule);
+  font-size: 12px;
+}
+.news-row .date {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--ink-3);
+}
+.news-row .cat {
+  font-family: var(--mono);
+  font-size: 9px;
+  padding: 2px 6px;
+  border: 1px solid var(--rule);
+  color: var(--ink-2);
+}
+
+/* === Single-page layout (full-width wireframes) ============= */
+.fullwire {
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  max-width: 1180px;
+  margin: 24px auto 0;
+  position: relative;
+}
+.fullwire .variation__tag { font-size: 11px; }
+.fullwire .wire-nav { padding: 18px 28px; }
+.fullwire .wire-hero .ph { min-height: 320px; }
+.fullwire .wire-section { padding: 32px 36px; }
+.fullwire .wire-footer { padding: 22px 36px; }
+
+/* side annotations rail for full wires */
+.fullwire-wrap {
+  display: grid;
+  grid-template-columns: 1fr 220px;
+  gap: 24px;
+  max-width: 1450px;
+  margin: 24px auto 0;
+  align-items: start;
+}
+@media (max-width: 1280px) {
+  .fullwire-wrap { grid-template-columns: 1fr; }
+}
+.fullwire-wrap .fullwire { margin: 0; max-width: none; }
+.rail {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--ink-2);
+  line-height: 1.55;
+  padding-top: 40px;
+}
+.rail h4 {
+  font-family: var(--hand-en);
+  color: var(--accent);
+  margin: 0 0 6px;
+  font-size: 16px;
+  font-weight: 400;
+}
+.rail ul { padding-left: 16px; margin: 0 0 18px; }
+.rail li { margin-bottom: 4px; }
+
+/* === Tweaks panel =========================================== */
+.tweaks {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 80;
+  background: var(--paper);
+  border: 1.5px solid var(--rule);
+  padding: 12px 14px;
+  font-family: var(--mono);
+  font-size: 11px;
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 200px;
+  box-shadow: 4px 4px 0 rgba(0,0,0,0.08);
+}
+.tweaks.open { display: flex; }
+.tweaks h5 {
+  margin: 0 0 4px;
+  font-family: var(--hand-en);
+  font-size: 16px;
+  font-weight: 400;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 4px;
+}
+.tweaks label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.tweaks input[type=range] { width: 100px; }
+.tweaks .swatches { display: flex; gap: 6px; }
+.tweaks .swatch {
+  width: 22px; height: 22px;
+  border: 1.5px solid var(--rule);
+  border-radius: 50%;
+  cursor: pointer;
+}
+.tweaks .swatch[aria-selected="true"] { outline: 2px solid var(--ink); outline-offset: 2px; }
+
+/* sketchy mode rotations */
+body[data-sketch="2"] .variation,
+body[data-sketch="2"] .fullwire {
+  transform: rotate(-0.15deg);
+}
+body[data-sketch="2"] .wire-card { transform: rotate(0.2deg); }
+body[data-sketch="2"] .wire-card:nth-child(2n) { transform: rotate(-0.3deg); }
+body[data-sketch="2"] .ph { border-radius: 2px; }
+
+body[data-sketch="0"] .variation,
+body[data-sketch="0"] .fullwire,
+body[data-sketch="0"] .wire-card {
+  transform: none !important;
+}
+
+/* No-accent mode */
+body[data-accent="off"] {
+  --accent: var(--ink);
+  --accent-2: var(--ink-2);
+}
+body[data-accent="off"] .variation__title em,
+body[data-accent="off"] .note,
+body[data-accent="off"] .annot,
+body[data-accent="off"] .rail h4 {
+  color: var(--ink);
+}
+body[data-accent="off"] .annot::before { background: var(--ink); }
