@@ -29,7 +29,7 @@ html, body {
   background: var(--paper);
   color: var(--ink);
   font-family: var(--jp-body);
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.6;
   font-feature-settings: "palt";
   -webkit-font-smoothing: antialiased;
@@ -62,13 +62,13 @@ body {
 .topbar__title .h {
   font-family: var(--hand-en);
   font-weight: 500;
-  font-size: 26px;
+  font-size: 30px;
   letter-spacing: 0.04em;
   line-height: 1;
 }
 .topbar__title .sub {
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 13px;
   color: var(--ink-3);
   letter-spacing: 0.04em;
 }
@@ -86,7 +86,7 @@ body {
   border-radius: 999px;
   padding: 6px 14px;
   font-family: var(--jp-body);
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 400;
   color: var(--ink);
   cursor: pointer;
@@ -99,7 +99,7 @@ body {
 }
 .tab .num {
   font-family: var(--mono);
-  font-size: 10px;
+  font-size: 12px;
   color: var(--ink-3);
   margin-right: 6px;
 }
@@ -119,19 +119,19 @@ body {
 .page-header h1 {
   font-family: var(--jp-head);
   font-weight: 500;
-  font-size: 28px;
+  font-size: 32px;
   margin: 0;
   letter-spacing: 0.04em;
 }
 .page-header .crumb {
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 13px;
   color: var(--ink-3);
 }
 .page-header .desc {
   margin-top: 4px;
   flex-basis: 100%;
-  font-size: 13px;
+  font-size: 15px;
   color: var(--ink-2);
   max-width: 70ch;
 }
@@ -162,7 +162,7 @@ body {
   color: var(--paper);
   padding: 4px 12px 5px;
   font-family: var(--mono);
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.08em;
   z-index: 2;
 }
@@ -170,7 +170,7 @@ body {
   padding: 14px 18px 8px 70px;
   font-family: var(--jp-head);
   font-weight: 500;
-  font-size: 15px;
+  font-size: 17px;
   letter-spacing: 0.04em;
   border-bottom: 1px dashed var(--rule);
 }
@@ -195,7 +195,7 @@ body {
   justify-content: center;
   color: var(--ink-2);
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 13px;
   letter-spacing: 0.04em;
   text-align: center;
   padding: 8px;
@@ -242,7 +242,7 @@ body {
 /* annotation arrow callouts */
 .note {
   font-family: var(--hand-en);
-  font-size: 14px;
+  font-size: 16px;
   color: var(--accent);
   display: inline-flex;
   align-items: center;
@@ -254,7 +254,7 @@ body {
 .annot {
   position: absolute;
   font-family: var(--hand-en);
-  font-size: 13px;
+  font-size: 15px;
   color: var(--accent);
   line-height: 1.2;
   pointer-events: none;
@@ -278,13 +278,13 @@ body {
   padding: 14px 18px;
   border-bottom: 1px dashed var(--rule);
   font-family: var(--hand-en);
-  font-size: 14px;
+  font-size: 16px;
   background: rgba(255,255,255,0.4);
 }
 .wire-nav .brand {
   font-family: var(--jp-head);
   font-weight: 500;
-  font-size: 18px;
+  font-size: 21px;
   letter-spacing: 0.08em;
   display: flex;
   align-items: center;
@@ -301,7 +301,7 @@ body {
   list-style: none;
   margin: 0;
   padding: 0;
-  font-size: 12px;
+  font-size: 14px;
   color: var(--ink-2);
 }
 
@@ -320,12 +320,12 @@ body {
   padding: 8px 12px;
   border: 1px solid var(--rule);
   font-family: var(--hand);
-  font-size: 13px;
+  font-size: 15px;
 }
 .wire-hero .overlay .en {
   display: block;
   font-family: var(--hand-en);
-  font-size: 11px;
+  font-size: 13px;
   color: var(--ink-3);
 }
 
@@ -337,7 +337,7 @@ body {
 .wire-section h3 {
   font-family: var(--hand-en);
   font-weight: 500;
-  font-size: 18px;
+  font-size: 21px;
   margin: 0 0 8px;
   color: var(--ink);
   border-bottom: 1px solid var(--rule);
@@ -346,7 +346,7 @@ body {
 }
 .wire-section h3 .jp {
   font-family: var(--jp-head);
-  font-size: 12px;
+  font-size: 14px;
   color: var(--ink-3);
   margin-left: 10px;
   letter-spacing: 0.05em;
@@ -364,19 +364,19 @@ body {
 .wire-card .ph { min-height: 90px; margin-bottom: 6px; }
 .wire-card .meta {
   font-family: var(--mono);
-  font-size: 9px;
+  font-size: 10px;
   color: var(--ink-3);
   letter-spacing: 0.03em;
 }
 .wire-card .ttl {
   font-family: var(--hand);
-  font-size: 12px;
+  font-size: 14px;
   margin-top: 2px;
 }
 
 .see-more {
   font-family: var(--hand-en);
-  font-size: 13px;
+  font-size: 15px;
   border-top: 1px solid var(--rule);
   border-bottom: 1px solid var(--rule);
   padding: 6px 0;
@@ -389,7 +389,7 @@ body {
 .wire-footer {
   padding: 14px 18px;
   font-family: var(--mono);
-  font-size: 10px;
+  font-size: 12px;
   color: var(--ink-3);
   display: flex;
   justify-content: space-between;
@@ -404,16 +404,16 @@ body {
   gap: 14px;
   padding: 10px 0;
   border-bottom: 1px dashed var(--rule);
-  font-size: 12px;
+  font-size: 14px;
 }
 .news-row .date {
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 13px;
   color: var(--ink-3);
 }
 .news-row .cat {
   font-family: var(--mono);
-  font-size: 9px;
+  font-size: 10px;
   padding: 2px 6px;
   border: 1px solid var(--rule);
   color: var(--ink-2);
@@ -427,7 +427,7 @@ body {
   margin: 24px auto 0;
   position: relative;
 }
-.fullwire .variation__tag { font-size: 11px; }
+.fullwire .variation__tag { font-size: 13px; }
 .fullwire .wire-nav { padding: 18px 28px; }
 .fullwire .wire-hero .ph { min-height: 320px; }
 .fullwire .wire-section { padding: 32px 36px; }
@@ -448,7 +448,7 @@ body {
 .fullwire-wrap .fullwire { margin: 0; max-width: none; }
 .rail {
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 13px;
   color: var(--ink-2);
   line-height: 1.55;
   padding-top: 40px;
@@ -457,7 +457,7 @@ body {
   font-family: var(--hand-en);
   color: var(--accent);
   margin: 0 0 6px;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
 }
 .rail ul { padding-left: 16px; margin: 0 0 18px; }
@@ -473,7 +473,7 @@ body {
   border: 1.5px solid var(--rule);
   padding: 12px 14px;
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 13px;
   display: none;
   flex-direction: column;
   gap: 10px;
@@ -484,7 +484,7 @@ body {
 .tweaks h5 {
   margin: 0 0 4px;
   font-family: var(--hand-en);
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
   border-bottom: 1px solid var(--rule);
   padding-bottom: 4px;
